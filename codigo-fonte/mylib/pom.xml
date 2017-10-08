@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.estudos.wicketProject</groupId>
-	<artifactId>wicketProject</artifactId>
+	<groupId>br.estudos.mylib</groupId>
+	<artifactId>mylib</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>wicketProject-web</name>
-	<description>Aplicação para estudos do framework Apache Wicket</description>
+	<name>mylib-web</name>
+	<description>My Lib</description>
 
 	<properties>
 		<java.version>1.8</java.version>

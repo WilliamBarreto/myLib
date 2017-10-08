@@ -1,4 +1,4 @@
-package br.estudos.wicketProject;
+package br.estudos.mylib;
 
 import java.lang.management.ManagementFactory;
 

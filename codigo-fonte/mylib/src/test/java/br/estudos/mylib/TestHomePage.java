@@ -1,4 +1,4 @@
-package br.estudos.wicketProject;
+package br.estudos.mylib;
 
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
