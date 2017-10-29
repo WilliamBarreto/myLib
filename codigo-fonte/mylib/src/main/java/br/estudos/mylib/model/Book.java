@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="book")
@@ -15,10 +17,20 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotNull
+	@Size(max = 30)
 	private String book;
+	
+	@NotNull
+	@Size(max = 30)
 	private String publisher;
+	
+	@NotNull
+	@Size(max = 4)
 	private int pages;
 	
+	@NotNull
 	@OneToOne
 	@Column(name="fk_authorId")
 	private Author author;
