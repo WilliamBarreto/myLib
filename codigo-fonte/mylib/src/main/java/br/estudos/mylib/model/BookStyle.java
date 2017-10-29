@@ -1,15 +1,13 @@
-/**
- * @author Jonathan Cabral
- * @Since October 23
- */
 package br.estudos.mylib.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -22,10 +20,13 @@ public class BookStyle {
 	private Long id;
 	
 	@ManyToMany
-	private List<Book> fk_bookId;
+	@Column(name="fk_bookId")
+	@JoinColumn()
+	private List<Book> book;
 	
 	@ManyToMany
-	private List<Style> fk_styleId;
+	@Column(name="fk_styleId")
+	private List<Style> style;
 
 	public Long getId() {
 		return id;
@@ -35,19 +36,19 @@ public class BookStyle {
 		this.id = id;
 	}
 
-	public List<Book> getFk_bookId() {
-		return fk_bookId;
+	public List<Book> getBook() {
+		return book;
 	}
 
-	public void setFk_bookId(List<Book> fk_bookId) {
-		this.fk_bookId = fk_bookId;
+	public void setBook(List<Book> book) {
+		this.book = book;
 	}
 
-	public List<Style> getFk_styleId() {
-		return fk_styleId;
+	public List<Style> getStyle() {
+		return style;
 	}
 
-	public void setFk_styleId(List<Style> fk_styleId) {
-		this.fk_styleId = fk_styleId;
+	public void setStyle(List<Style> style) {
+		this.style = style;
 	}
 }

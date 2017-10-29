@@ -1,11 +1,8 @@
-/**
- * @author Jonathan Cabral
- * @Since October 23
- */
 package br.estudos.mylib.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +19,12 @@ public class UserBook {
 	private Long id;
 	
 	@ManyToMany
-	private List<User> fk_userId;
+	@Column(name="fk_userId")
+	private List<User> user;
 	
 	@ManyToMany
-	private List<Book> fk_bookId;
+	@Column(name="fk_bookId")
+	private List<Book> book;
 
 	public Long getId() {
 		return id;
@@ -35,19 +34,19 @@ public class UserBook {
 		this.id = id;
 	}
 
-	public List<User> getFk_userId() {
-		return fk_userId;
+	public List<User> getUser() {
+		return user;
 	}
 
-	public void setFk_userId(List<User> fk_userId) {
-		this.fk_userId = fk_userId;
+	public void setUser(List<User> user) {
+		this.user = user;
 	}
 
-	public List<Book> getFk_bookId() {
-		return fk_bookId;
+	public List<Book> getBook() {
+		return book;
 	}
 
-	public void setFk_bookId(List<Book> fk_bookId) {
-		this.fk_bookId = fk_bookId;
+	public void setBook(List<Book> book) {
+		this.book = book;
 	}
 }

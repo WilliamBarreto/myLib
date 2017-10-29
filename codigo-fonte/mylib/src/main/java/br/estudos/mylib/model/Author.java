@@ -1,22 +1,19 @@
-/**
- * @author Jonathan Cabral
- * @Since October 23
- */
 package br.estudos.mylib.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="author")
 public class Author {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private String name;
+	private String author;
 
 	public Long getId() {
 		return id;
@@ -26,11 +23,11 @@ public class Author {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 }

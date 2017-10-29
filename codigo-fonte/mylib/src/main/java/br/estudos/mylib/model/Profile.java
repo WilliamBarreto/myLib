@@ -1,15 +1,13 @@
-/**
- * @author Jonathan Cabral
- * @Since October 23
- */
 package br.estudos.mylib.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="profile")
 public class Profile {
 
 	@Id

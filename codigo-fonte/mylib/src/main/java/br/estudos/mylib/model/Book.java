@@ -1,27 +1,27 @@
-/**
- * @author Jonathan Cabral
- * @Since October 23
- */
 package br.estudos.mylib.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="book")
 public class Book {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
-	private String Publisher;
+	private String book;
+	private String publisher;
 	private int pages;
 	
 	@OneToOne
-	private Author fk_authorId;
+	@Column(name="fk_authorId")
+	private Author author;
 
 	public Long getId() {
 		return id;
@@ -31,20 +31,20 @@ public class Book {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getBook() {
+		return book;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setBook(String book) {
+		this.book = book;
 	}
 
 	public String getPublisher() {
-		return Publisher;
+		return publisher;
 	}
 
 	public void setPublisher(String publisher) {
-		Publisher = publisher;
+		this.publisher = publisher;
 	}
 
 	public int getPages() {
@@ -55,11 +55,11 @@ public class Book {
 		this.pages = pages;
 	}
 
-	public Author getFk_authorId() {
-		return fk_authorId;
+	public Author getAuthor() {
+		return author;
 	}
 
-	public void setFk_authorId(Author fk_authorId) {
-		this.fk_authorId = fk_authorId;
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 }
