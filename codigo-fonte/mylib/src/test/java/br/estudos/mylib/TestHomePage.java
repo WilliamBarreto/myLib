@@ -4,6 +4,9 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.estudos.mylib.ui.HomePage;
+import br.com.estudos.mylib.ui.WicketApplication;
+
 /**
  * Simple test using the WicketTester
  */

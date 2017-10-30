@@ -1,4 +1,4 @@
-package br.estudos.mylib.model;
+package br.com.estudos.mylib.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

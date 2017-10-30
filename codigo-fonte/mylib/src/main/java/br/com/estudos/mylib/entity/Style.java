@@ -1,4 +1,4 @@
-package br.estudos.mylib.model;
+package br.com.estudos.mylib.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,16 +9,16 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="author")
-public class Author {
-	
+@Table(name="style")
+public class Style {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Size(max = 30)
 	@NotNull
-	private String author;
+	@Size(max = 30)
+	private String style;
 
 	public Long getId() {
 		return id;
@@ -28,11 +28,11 @@ public class Author {
 		this.id = id;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getStyle() {
+		return style;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setStyle(String style) {
+		this.style = style;
 	}
 }

@@ -1,4 +1,4 @@
-package br.estudos.mylib;
+package br.com.estudos.mylib.ui;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;

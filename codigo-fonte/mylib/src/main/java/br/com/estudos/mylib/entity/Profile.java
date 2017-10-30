@@ -1,38 +1,30 @@
-package br.estudos.mylib.model;
+package br.com.estudos.mylib.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="style")
-public class Style {
+@Table(name="profile")
+public class Profile {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String profile;
 	
-	@NotNull
-	@Size(max = 30)
-	private String style;
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getStyle() {
-		return style;
+	public String getProfile() {
+		return profile;
 	}
-
-	public void setStyle(String style) {
-		this.style = style;
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 }

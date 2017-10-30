@@ -1,4 +1,4 @@
-package br.estudos.mylib;
+package br.com.estudos.mylib.ui;
 
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
