@@ -1,5 +1,6 @@
 package br.com.estudos.mylib.ui;
 
+import org.apache.wicket.cdi.CdiConfiguration;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
 
@@ -12,7 +13,7 @@ import br.com.estudos.mylib.ui.teste.TestePage;
  * 
  * @see br.estudos.mylib.Start#main(String[])
  */
-public class WicketApplication extends WebApplication {
+public class MyLibApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
@@ -27,6 +28,7 @@ public class WicketApplication extends WebApplication {
 	@Override
 	public void init() {
 		super.init();
+        new CdiConfiguration().configure(this);
 		mountPage("home", HomePage.class);
 		mountPage("teste", TestePage.class);
 	}

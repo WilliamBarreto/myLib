@@ -44,7 +44,7 @@
 			<version>5.2.10.Final</version>
 			<scope>provided</scope>
 		</dependency>
-
+		
 		<!-- JPA -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -64,6 +64,18 @@
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-extensions</artifactId>
 			<version>${wicket.version}</version>
+		</dependency>
+<!--  		
+ 		<dependency>
+		    <groupId>org.wicketstuff</groupId>
+    		<artifactId>wicketstuff-javaee-inject</artifactId>
+    		<version>${wicket.version}</version>
+		</dependency>
+-->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+    		<artifactId>wicket-cdi-1.1</artifactId>
+    		<version>${wicket.version}</version>
 		</dependency>
 
 		<!-- Log4j -->
@@ -93,6 +105,14 @@
 			<version>${jetty9.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Mysql -->
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>5.1.6</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<resources>

@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="style")
-public class Style {
+public class Style extends BaseEntity<Long>{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,7 @@ public class Style {
 	@Size(max = 30)
 	private String style;
 
+	@Override
 	public Long getId() {
 		return id;
 	}

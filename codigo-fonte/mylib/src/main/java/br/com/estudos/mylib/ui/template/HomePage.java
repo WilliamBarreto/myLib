@@ -12,8 +12,8 @@ public class HomePage extends TemplatePage {
 	}
 	
 	@Override
-	protected void initComponents() {
-		//add(new Label("version", getApplication().getFrameworkSettings().getVersion()));
-		
-	}	
+	protected void initComponents() {}
+
+	@Override
+	protected void initReferences() {}	
 }

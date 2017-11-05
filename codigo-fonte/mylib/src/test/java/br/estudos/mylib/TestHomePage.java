@@ -4,7 +4,7 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.estudos.mylib.ui.WicketApplication;
+import br.com.estudos.mylib.ui.MyLibApplication;
 import br.com.estudos.mylib.ui.template.HomePage;
 
 /**
@@ -17,7 +17,7 @@ public class TestHomePage
 	@Before
 	public void setUp()
 	{
-		tester = new WicketTester(new WicketApplication());
+		tester = new WicketTester(new MyLibApplication());
 	}
 
 	@Test

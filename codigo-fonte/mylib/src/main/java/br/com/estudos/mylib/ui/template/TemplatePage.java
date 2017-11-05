@@ -7,7 +7,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import br.com.estudos.mylib.ui.teste.TestePage;
 
-public class TemplatePage extends WebPage{
+public abstract class TemplatePage extends WebPage{
 
 	private static final long serialVersionUID = 1426508442885188335L;
 	private String name;
@@ -26,9 +26,9 @@ public class TemplatePage extends WebPage{
 		add(new Label("titulo",getName()));
 	}
 
-	protected void initReferences() {}
+	protected abstract void initReferences();
 	
-	protected void initComponents() {}
+	protected abstract void initComponents();
 
 	private void initMenu() {
 		add(lnkMylib());
