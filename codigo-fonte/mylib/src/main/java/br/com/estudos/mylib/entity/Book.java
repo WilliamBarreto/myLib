@@ -2,11 +2,12 @@ package br.com.estudos.mylib.entity;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -35,11 +36,17 @@ public class Book {
 	
 	@NotNull
 	@OneToOne
-	@Column(name="fk_authorId")
+	@JoinTable(name="fk_authorId")
 	private Author author;
 	
 	@ManyToMany(mappedBy="book")
 	private List<User> user;
+	
+	@ManyToMany
+    @JoinTable(name="book_style", joinColumns=
+    {@JoinColumn(name="fk_bookId")}, inverseJoinColumns=
+      {@JoinColumn(name="fk_styleId")})
+	private Style style;
 	
 	public Long getId() {
 		return id;
