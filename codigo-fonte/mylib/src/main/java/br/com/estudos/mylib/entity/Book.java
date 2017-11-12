@@ -47,7 +47,7 @@ public class Book {
     @JoinTable(name="book_style", joinColumns=
     {@JoinColumn(name="fk_bookId")}, inverseJoinColumns=
       {@JoinColumn(name="fk_styleId")})
-	private Style style;
+	private List<Style> style;
 	
 	public Long getId() {
 		return id;

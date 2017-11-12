@@ -1,5 +1,7 @@
 package br.com.estudos.mylib.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +15,8 @@ import javax.validation.constraints.Size;
 @Table(name="style")
 public class Style extends BaseEntity<Long>{
 
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -22,7 +26,7 @@ public class Style extends BaseEntity<Long>{
 	private String style;
 
 	@ManyToMany(mappedBy="style")
-	private Book book;
+	private List<Book> book;
 	
 	@Override
 	public Long getId() {
