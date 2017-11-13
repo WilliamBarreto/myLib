@@ -23,7 +23,7 @@ public class Book {
 	private Long id;
 	
 	@NotNull
-	@Size(max = 30)
+	@Size(max = 60)
 	private String book;
 	
 	@NotNull
@@ -40,14 +40,14 @@ public class Book {
 
 	private Author author;
 	
-	@ManyToMany(mappedBy="book")
-	private List<User> user;
+	@ManyToMany(mappedBy="books")
+	private List<User> users;
 	
 	@ManyToMany
     @JoinTable(name="book_style", joinColumns=
     {@JoinColumn(name="fk_bookId")}, inverseJoinColumns=
       {@JoinColumn(name="fk_styleId")})
-	private List<Style> style;
+	private List<Style> styles;
 	
 	public Long getId() {
 		return id;
@@ -87,5 +87,21 @@ public class Book {
 
 	public void setAuthor(Author author) {
 		this.author = author;
+	}
+
+	public List<User> getUser() {
+		return users;
+	}
+
+	public void setUser(List<User> users) {
+		this.users = users;
+	}
+
+	public List<Style> getStyles() {
+		return styles;
+	}
+
+	public void setStyles(List<Style> styles) {
+		this.styles = styles;
 	}
 }

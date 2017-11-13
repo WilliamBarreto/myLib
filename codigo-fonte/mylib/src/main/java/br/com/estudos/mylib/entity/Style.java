@@ -25,8 +25,8 @@ public class Style extends BaseEntity<Long>{
 	@Size(max = 30)
 	private String style;
 
-	@ManyToMany(mappedBy="style")
-	private List<Book> book;
+	@ManyToMany(mappedBy="styles")
+	private List<Book> books;
 	
 	@Override
 	public Long getId() {
@@ -43,5 +43,13 @@ public class Style extends BaseEntity<Long>{
 
 	public void setStyle(String style) {
 		this.style = style;
+	}
+	
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 }

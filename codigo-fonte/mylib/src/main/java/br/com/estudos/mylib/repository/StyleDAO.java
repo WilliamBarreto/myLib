@@ -14,7 +14,7 @@ import br.com.estudos.mylib.entity.Style;
 
 @Stateless
 @TransactionAttribute(TransactionAttributeType.MANDATORY)
-public class StyleDAO {
+public class StyleDAO implements IStyleRepository {
 
 	@PersistenceContext(unitName = "mylib-pu")
 	private EntityManager entityManager;

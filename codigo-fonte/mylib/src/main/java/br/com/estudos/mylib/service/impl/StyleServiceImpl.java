@@ -8,7 +8,7 @@ import javax.ejb.TransactionAttributeType;
 import javax.inject.Inject;
 
 import br.com.estudos.mylib.entity.Style;
-import br.com.estudos.mylib.repository.StyleDAO;
+import br.com.estudos.mylib.repository.IStyleRepository;
 import br.com.estudos.mylib.service.StyleService;
 
 @Stateless
@@ -16,7 +16,7 @@ import br.com.estudos.mylib.service.StyleService;
 public class StyleServiceImpl implements StyleService{
 
 	@Inject
-	private StyleDAO dao;
+	private IStyleRepository dao;
 	
 	public List<Style> listar(){
 		return dao.listar();

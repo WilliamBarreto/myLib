@@ -44,7 +44,7 @@ public class User {
     @JoinTable(name="user_book", joinColumns=
     {@JoinColumn(name="fk_userId")}, inverseJoinColumns=
       {@JoinColumn(name="fk_bookId")})
-	private List<Book> book;
+	private List<Book> books;
 
 	public Long getId() {
 		return id;
@@ -92,5 +92,13 @@ public class User {
 
 	public void setProfile(Profile profile) {
 		this.profile = profile;
+	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 }
