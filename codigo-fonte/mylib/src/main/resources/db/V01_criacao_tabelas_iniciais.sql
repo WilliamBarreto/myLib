@@ -27,7 +27,7 @@ CREATE TABLE user (
 -- BOOK'S TABLE CREATION
 CREATE TABLE book (
     id BIGINT(4) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    book VARCHAR(30) NOT NULL,
+    book VARCHAR(60) NOT NULL,
     publisher VARCHAR(30) NOT NULL,
     pages int(4) NOT NULL,
     fk_authorId BIGINT(4)
