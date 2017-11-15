@@ -1,3 +1,6 @@
+--ALTERAR TAMANHO DO CAMPO BOOK DE 30 PARA 60 CARACTERES
+ALTER TABLE book MODIFY book VARCHAR(60);
+
 -- CADASTRO DE ESTILOS
 insert into style (style) values ('Biografias e Memórias');
 insert into style (style) values ('Contos');
