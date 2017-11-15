@@ -1,7 +1,14 @@
 body {
   padding-top: 5rem;
 }
+
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
 }
+
+#rodape {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	}
