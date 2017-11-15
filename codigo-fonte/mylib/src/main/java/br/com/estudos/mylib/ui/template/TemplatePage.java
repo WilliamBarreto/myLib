@@ -5,6 +5,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
+import br.com.estudos.mylib.ui.book.bookPage;
 import br.com.estudos.mylib.ui.teste.TestePage;
 
 public abstract class TemplatePage extends WebPage{
@@ -34,6 +35,7 @@ public abstract class TemplatePage extends WebPage{
 		add(lnkMylib());
 		add(lnkHome());
 		add(lnkTest());
+		add(lnkBook());
 	}
 
 	private Link<Void> lnkHome() {
@@ -69,10 +71,20 @@ public abstract class TemplatePage extends WebPage{
 		};
 	}
 
+	private Link<Void> lnkBook(){
+		return new Link<Void>("book") {
+			private static final long serialVersionUID = -8144804952823314967L;
+
+			@Override
+			public void onClick() {
+				setResponsePage(bookPage.class);
+			}
+		};
+	}
+
 	public String getName() {
 		if(name == null)
 			return "MYLIB";
 		return name;
 	}
-	
 }
