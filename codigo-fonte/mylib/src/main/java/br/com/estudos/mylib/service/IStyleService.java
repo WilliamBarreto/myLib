@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.com.estudos.mylib.entity.Style;
 
-public interface StyleService {
+public interface IStyleService {
 
 	List<Style> listar();
 }

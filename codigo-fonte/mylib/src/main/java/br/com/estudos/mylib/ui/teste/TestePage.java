@@ -8,7 +8,7 @@ import org.apache.wicket.markup.html.list.PropertyListView;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import br.com.estudos.mylib.entity.Style;
-import br.com.estudos.mylib.service.StyleService;
+import br.com.estudos.mylib.service.IStyleService;
 import br.com.estudos.mylib.ui.template.TemplatePage;
 
 public class TestePage extends TemplatePage {
@@ -16,7 +16,7 @@ public class TestePage extends TemplatePage {
 	private static final long serialVersionUID = 331428942884252955L;
 	
 	@Inject 
-	private StyleService styleService;
+	private IStyleService styleService;
 	
 	public TestePage(PageParameters pageParameters) {
 		super(pageParameters,"Teste");

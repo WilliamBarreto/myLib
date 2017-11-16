@@ -36,8 +36,7 @@ public class Book {
 	
 	@NotNull
 	@OneToOne
-	@JoinTable(name="fk_authorId")
-
+	@JoinColumn(name="id")
 	private Author author;
 	
 	@ManyToMany(mappedBy="books")

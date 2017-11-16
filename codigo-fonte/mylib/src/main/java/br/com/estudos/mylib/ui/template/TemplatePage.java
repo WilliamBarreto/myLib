@@ -5,7 +5,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
-import br.com.estudos.mylib.ui.book.bookPage;
+import br.com.estudos.mylib.ui.book.BookPage;
 import br.com.estudos.mylib.ui.teste.TestePage;
 
 public abstract class TemplatePage extends WebPage{
@@ -77,7 +77,7 @@ public abstract class TemplatePage extends WebPage{
 
 			@Override
 			public void onClick() {
-				setResponsePage(bookPage.class);
+				setResponsePage(BookPage.class);
 			}
 		};
 	}

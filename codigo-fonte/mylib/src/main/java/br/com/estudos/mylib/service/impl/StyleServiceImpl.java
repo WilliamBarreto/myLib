@@ -9,11 +9,11 @@ import javax.inject.Inject;
 
 import br.com.estudos.mylib.entity.Style;
 import br.com.estudos.mylib.repository.IStyleRepository;
-import br.com.estudos.mylib.service.StyleService;
+import br.com.estudos.mylib.service.IStyleService;
 
 @Stateless
 @TransactionAttribute(TransactionAttributeType.REQUIRED)
-public class StyleServiceImpl implements StyleService{
+public class StyleServiceImpl implements IStyleService{
 
 	@Inject
 	private IStyleRepository dao;
