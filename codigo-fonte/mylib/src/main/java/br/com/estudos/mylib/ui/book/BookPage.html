@@ -3,12 +3,22 @@
 		<thead>
 			<tr>
 				<th scope="col">Livro</th>
+				<th scope="col">Author</th>
+				<th scope="col">Estilos</th>
 				<th scope="col">Paginas</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr wicket:id="books">
-				<th scope="row" wicket:id="book"></th>
+				<td scope="row" wicket:id="book"></td>
+				<td scope="row" wicket:id="author.author"></td>
+				<td scope=row>
+					<ul>
+						<li wicket:id="styles">
+							<span wicket:id="style"></span>
+						</li>
+					</ul>
+				</td>
 				<td wicket:id="pages"></td>
 				
 			</tr>

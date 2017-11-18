@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.list.PropertyListView;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import br.com.estudos.mylib.entity.Book;
+import br.com.estudos.mylib.entity.Style;
 import br.com.estudos.mylib.service.IBookService;
 import br.com.estudos.mylib.ui.template.TemplatePage;
 
@@ -39,7 +40,23 @@ public class BookPage extends TemplatePage{
 			@Override
 			protected void populateItem(ListItem<Book> item) {
 				item.add(new Label("book"));
+				item.add(new Label("author.author"));
 				item.add(new Label("pages"));
+				
+				item.add(newListViewStyles(item));
+			}
+
+			private PropertyListView<Style> newListViewStyles(ListItem<Book> item) {
+				return new PropertyListView<Style>("styles",item.getModelObject().getStyles()) {
+					
+					private static final long serialVersionUID = -7409174526866691556L;
+
+					@Override
+					protected void populateItem(ListItem<Style> item) {
+						item.add(new Label("style"));
+					}
+				
+				};
 			}
 			
 		};

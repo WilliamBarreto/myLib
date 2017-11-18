@@ -21,7 +21,9 @@ public class BookServiceImp implements IBookService{
 	
 	@Override
 	public List<Book> listar() {
-		return Collections.unmodifiableList(dao.listar());
+		List<Book> books = dao.listar();
+		books.forEach(b -> b.getStyles().size());//Busca todos estilos		
+		return Collections.unmodifiableList(books);
 	}
 
 }
