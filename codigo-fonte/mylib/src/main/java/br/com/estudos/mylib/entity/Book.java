@@ -45,7 +45,7 @@ public class Book {
 	@ManyToMany
     @JoinTable(name="book_style", joinColumns=
     {@JoinColumn(name="fk_bookId")}, inverseJoinColumns=
-      {@JoinColumn(name="fk_styleId")})
+    {@JoinColumn(name="fk_styleId")})
 	private List<Style> styles;
 	
 	public Long getId() {
