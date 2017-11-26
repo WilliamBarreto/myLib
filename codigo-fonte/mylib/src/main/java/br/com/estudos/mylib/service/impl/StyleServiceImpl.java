@@ -9,7 +9,6 @@ import javax.inject.Inject;
 
 import br.com.estudos.mylib.entity.Style;
 import br.com.estudos.mylib.repository.IStyleRepository;
-import br.com.estudos.mylib.repository.StyleDAO;
 import br.com.estudos.mylib.service.IStyleService;
 
 @Stateless
@@ -17,12 +16,9 @@ import br.com.estudos.mylib.service.IStyleService;
 public class StyleServiceImpl implements IStyleService{
 
 	@Inject
-	private IStyleRepository dao;
-	
-	@Inject 
-	private StyleDAO styleDao;
+	private IStyleRepository repository;
 	
 	public List<Style> listar(){
-		return styleDao.listAll(Style.class);
+		return repository.listar();
 	}
 }
