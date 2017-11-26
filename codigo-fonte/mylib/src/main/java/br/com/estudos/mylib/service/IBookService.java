@@ -7,5 +7,7 @@ import br.com.estudos.mylib.entity.Book;
 public interface IBookService {
 
 	public List<Book> listar();
+
+	public Book buscarPorId(Long id);
 	
 }
