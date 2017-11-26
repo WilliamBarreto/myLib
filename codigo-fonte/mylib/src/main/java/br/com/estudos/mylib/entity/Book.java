@@ -16,7 +16,9 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="book")
-public class Book {
+public class Book extends BaseEntity<Long>{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
