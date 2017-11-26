@@ -10,8 +10,10 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="author")
-public class Author {
+public class Author extends BaseEntity<Long>{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

@@ -5,6 +5,8 @@ import java.util.Objects;
 
 public abstract class BaseEntity<I extends Serializable>  implements IBaseEntity<I>{
 	
+	private static final long serialVersionUID = -1236186012606718772L;
+
 	@Override
 	public int hashCode() {
 		int hash = 5;

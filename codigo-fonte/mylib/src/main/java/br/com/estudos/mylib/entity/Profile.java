@@ -8,7 +8,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="profile")
-public class Profile {
+public class Profile extends BaseEntity<Long>{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

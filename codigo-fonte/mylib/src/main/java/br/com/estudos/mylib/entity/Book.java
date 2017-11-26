@@ -16,7 +16,9 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="book")
-public class Book {
+public class Book extends BaseEntity<Long>{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +47,7 @@ public class Book {
 	@ManyToMany
     @JoinTable(name="book_style", joinColumns=
     {@JoinColumn(name="fk_bookId")}, inverseJoinColumns=
-      {@JoinColumn(name="fk_styleId")})
+    {@JoinColumn(name="fk_styleId")})
 	private List<Style> styles;
 	
 	public Long getId() {

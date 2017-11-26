@@ -30,6 +30,8 @@ public class BookDAO implements IBookRepository {
 		Root<Book> root = cq.from(Book.class);
 		Join<Book, Style> join = root.join("styles",JoinType.LEFT);
 		cq.orderBy(cb.asc(join.get("style")));
+		cq.orderBy(cb.asc(root.<String>get("book")));
+
 		return entityManger.createQuery(cq).getResultList();
 	}
 
