@@ -2,7 +2,7 @@ package br.com.estudos.mylib.repository;
 
 import java.util.List;
 
-public interface IGenericDAO<T> {
+public interface IGenericRepository<T> {
 	
 	List<T> listAll(Class<T> clazz);
 	T save(T t);

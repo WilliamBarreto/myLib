@@ -12,7 +12,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import br.com.estudos.mylib.entity.BaseEntity;
 
 @TransactionAttribute(TransactionAttributeType.MANDATORY)
-public class GenericDAO<T extends BaseEntity<Long>> implements IGenericDAO<T>{
+public class GenericDAO<T extends BaseEntity<Long>> implements IGenericRepository<T>{
 
 	@PersistenceContext(unitName="mylib-pu")
 	protected EntityManager entityManger;
