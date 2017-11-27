@@ -1,11 +1,8 @@
 package br.com.estudos.mylib.repository;
 
-import java.util.List;
-
 import br.com.estudos.mylib.entity.Book;
 
-public interface IBookRepository {
+public interface IBookRepository extends IBaseRepository<Long, Book>{
 
-	public List<Book> listar();
 
 }

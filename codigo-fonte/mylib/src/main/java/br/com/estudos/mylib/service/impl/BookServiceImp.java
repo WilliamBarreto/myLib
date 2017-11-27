@@ -26,4 +26,11 @@ public class BookServiceImp implements IBookService{
 		return Collections.unmodifiableList(books);
 	}
 
+	@Override
+	public Book buscarPorId(Long id) {
+		Book book = new Book();
+		book.setId(id);
+		return book;
+	}
+
 }
