@@ -6,7 +6,7 @@ public interface IGenericRepository<T> {
 	
 	List<T> listAll(Class<T> clazz);
 	T save(T t);
-	List<T> update();
-	void delete();
-	List<T> findById(T t);
+	T update(T t);
+	void delete(T t);
+	T findById(Class<T> clazz, T t);
 }

@@ -33,20 +33,21 @@ public class GenericDAO<T extends BaseEntity<Long>> implements IGenericRepositor
 	}
 
 	@Override
-	public List<T> update() {
-		// TODO Auto-generated method stub
-		return null;
+	public T update(T t) {
+		if(t.getId() == null)
+			entityManger.persist(t);
+		entityManger.merge(t);
+		return t;
 	}
 
 	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
-		
+	public void delete(T t) {
+		entityManger.remove(t);
 	}
 
 	@Override
-	public List<T> findById(T t) {
-		// TODO Auto-generated method stub
-		return null;
+	public T findById(Class<T> clazz, T t) {
+		t = entityManger.find(clazz, t.getId());
+		return t;
 	}
 }
