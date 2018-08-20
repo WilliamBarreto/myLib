@@ -5,154 +5,22 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.estudos.mylib</groupId>
 	<artifactId>mylib</artifactId>
-	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>mylib-web</name>
-	<description>My Lib</description>
+	<packaging>pom</packaging>
+
+	<name>MyLib</name>
+	<description>MyLib</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<wicket.version>7.9.0</wicket.version>
-		<jetty9.version>9.2.19.v20160908</jetty9.version>
-		<log4j.version>2.6.2</log4j.version>
-		<junit.version>4.12</junit.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<wtp.version>3.5.2</wtp.version>
 	</properties>
-
-	<dependencyManagement>
-    	<dependencies>
-        	<dependency>
-            	<groupId>org.jboss.arquillian</groupId>
-            	<artifactId>arquillian-bom</artifactId>
-            	<version>1.1.14.Final</version>
-            	<scope>import</scope>
-            	<type>pom</type>
-        	</dependency>
-    	</dependencies>
-	</dependencyManagement>
-
-	<dependencies>
-		<!-- JEE -->
-		<dependency>
-			<groupId>javax</groupId>
-			<artifactId>javaee-api</artifactId>
-			<version>7.0</version>
-			<scope>provided</scope>
-		</dependency>
 	
-		<!-- EJB  -->
-		<dependency>
-			<groupId>org.jboss.spec.javax.ejb</groupId>
-			<artifactId>jboss-ejb-api_3.2_spec</artifactId>
-			<version>1.0.0.Final</version>
-			<scope>provided</scope>
-		</dependency>
-		
-		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>5.2.10.Final</version>
-			<scope>provided</scope>
-		</dependency>
-		
-		<!-- JPA -->
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.0.Final</version>
-			<scope>provided</scope>
-		</dependency>
-		
-		<!-- Apache Wicket -->
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-core</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version>
-		</dependency>
-<!--  		
- 		<dependency>
-		    <groupId>org.wicketstuff</groupId>
-    		<artifactId>wicketstuff-javaee-inject</artifactId>
-    		<version>${wicket.version}</version>
-		</dependency>
--->
-		<dependency>
-			<groupId>org.apache.wicket</groupId>
-    		<artifactId>wicket-cdi-1.1</artifactId>
-    		<version>${wicket.version}</version>
-		</dependency>
-
-		<!-- Log4j -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-
-		<!-- Junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- Jetty dependência para teste -->
-		<dependency>
-			<groupId>org.eclipse.jetty.aggregate</groupId>
-			<artifactId>jetty-all</artifactId>
-			<version>${jetty9.version}</version>
-			<scope>test</scope>
-		</dependency>
-		
-		<!-- Mysql -->
-		<dependency>
-    		<groupId>mysql</groupId>
-    		<artifactId>mysql-connector-java</artifactId>
-    		<version>5.1.6</version>
-		</dependency>
-		
-		<!-- Arquillian -->
-		
-		<dependency>
-    		<groupId>org.jboss.arquillian.junit</groupId>
-	    	<artifactId>arquillian-junit-container</artifactId>
-    		<scope>test</scope>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.jboss.arquillian.container</groupId>
-		    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-		    <version>1.0.0.CR9</version>
-		    <scope>test</scope>
-		</dependency>
-		<dependency>
-		    <groupId>org.jboss.weld</groupId>
-		    <artifactId>weld-core</artifactId>
-		    <version>2.3.5.Final</version>
-		    <scope>test</scope>
-		</dependency>
-		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-simple</artifactId>
-		    <version>1.6.4</version>
-		    <scope>test</scope>
-		</dependency>
-		
-	</dependencies>
+	<modules>
+		<module>mylib-app</module>
+		<module>mylib-ui-components</module>
+	</modules>
+	
 	<build>
 		<resources>
 			<resource>
@@ -186,6 +54,7 @@
 				</excludes>
 			</testResource>
 		</testResources>
+		
 		<plugins>
 			<plugin>
 				<inherited>true</inherited>
@@ -198,29 +67,6 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty9.version}</version>
-				<configuration>
-					<systemProperties>
-						<systemProperty>
-							<name>maven.project.build.directory.test-classes</name>
-							<value>${project.build.directory}/test-classes</value>
-						</systemProperty>
-					</systemProperties>
-					<jettyXml>${project.basedir}/src/test/jetty/jetty.xml,${project.basedir}/src/test/jetty/jetty-ssl.xml,${project.basedir}/src/test/jetty/jetty-http.xml,${project.basedir}/src/test/jetty/jetty-https.xml</jettyXml>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<wtpversion>${wtp.version}</wtpversion>
 				</configuration>
 			</plugin>
 		</plugins>
